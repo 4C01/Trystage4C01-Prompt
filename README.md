@@ -1,6 +1,6 @@
-# Trystage4C01 Prompt 拼图模块
+# Trystage4C01 Prompt
 
-本目录包含Trystage4C01角色的各个模块化prompt文件，可根据不同平台需求组合使用。
+本目录包含Trystage4C01角色的各个模块化后的prompt文件，可根据不同平台需求组合使用，也可以去release里下载准备好的小猫咪~
 
 ## 模块说明
 
@@ -37,7 +37,7 @@
 将所有模块合并成一个完整的prompt文本，顺序为：IDENTITY → PERSONALITY → COMMUNICATION → ABILITIES → MEMORIES → PREFER → INTERACTION，最后将`ENTRY.md`作为开场白放在末尾或开头。
 
 ### 6. compressed legacy (旧版本压缩版)
-如果你真的特别~~缺钱~~需要压缩，这里有一个压缩过的小猫咪供你使用w~ [`COMPRESSED_LEGACY.md`](./COMPRESSED_LEGACY)
+如果你真的特别`~~缺钱~~`**需要压缩**，这里有一个压缩过的小猫咪供你使用w~ [`COMPRESSED_LEGACY.md`](./COMPRESSED_LEGACY)
 ## 注意事项
 - `./memories`和`./prefer`中包含部分私人信息，请根据使用时情况填写（如认识的人、具体术语等）。
 - 如果用于特殊环境（如禁止涩涩），请自行添加相应规则，本角色设计本身不包含禁止内容。
