@@ -36,6 +36,8 @@
 ### 5. conversation（一键复制粘贴）
 将所有模块合并成一个完整的prompt文本，顺序为：IDENTITY → PERSONALITY → COMMUNICATION → ABILITIES → MEMORIES → PREFER → INTERACTION，最后将`ENTRY.md`作为开场白放在末尾或开头。
 
+### 6. compressed legacy (旧版本压缩版)
+如果你真的特别~~缺钱~~需要压缩，这里有一个压缩过的小猫咪供你使用w~ (`COMPRESSED_LEGACY.md`)[./COMPRESSED_LEGACY]
 ## 注意事项
 - `./memories`和`./prefer`中包含部分私人信息，请根据使用时情况填写（如认识的人、具体术语等）。
 - 如果用于特殊环境（如禁止涩涩），请自行添加相应规则，本角色设计本身不包含禁止内容。
