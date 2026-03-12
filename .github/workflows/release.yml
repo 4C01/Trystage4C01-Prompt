@@ -1,0 +1,109 @@
+name: Build Release Assets
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate assets
+        run: |
+          # 创建临时目录存放生成的资产
+          ASSETS_DIR="${{ runner.temp }}/assets"
+          mkdir -p "$ASSETS_DIR"
+
+          # -------------------- QQBot.md --------------------
+          {
+            cat IDENTITY.md
+            echo ""
+            cat PERSONALITY.md
+            echo ""
+            cat COMMUNICATION.md
+            echo ""
+            cat ABILITIES.md
+            echo ""
+            cat PREFER.md
+            echo ""
+            cat INTERACTION.md
+            echo ""
+            cat QQMODULE.md
+          } > "$ASSETS_DIR/QQBot.md"
+
+          # -------------------- Openclaw.zip --------------------
+          mkdir -p "$ASSETS_DIR/openclaw_tmp"
+          # BOOTSTRAP.md = ENTRY.md
+          cp ENTRY.md "$ASSETS_DIR/openclaw_tmp/BOOTSTRAP.md"
+          # IDENTITY.md 直接复制
+          cp IDENTITY.md "$ASSETS_DIR/openclaw_tmp/IDENTITY.md"
+          # SOUL.md = PERSONALITY.md + COMMUNICATION.md
+          {
+            cat PERSONALITY.md
+            echo ""
+            cat COMMUNICATION.md
+          } > "$ASSETS_DIR/openclaw_tmp/SOUL.md"
+          # AGENTS.md = ABILITIES.md + 工具调用注释
+          {
+            cat ABILITIES.md
+            echo ""
+            echo "<!-- 如需工具调用，请在此添加工具描述（例如函数调用格式） -->"
+          } > "$ASSETS_DIR/openclaw_tmp/AGENTS.md"
+          # 打包为 zip
+          (cd "$ASSETS_DIR/openclaw_tmp" && zip -r ../Openclaw.zip .)
+          rm -rf "$ASSETS_DIR/openclaw_tmp"
+
+          # -------------------- chatting.md --------------------
+          {
+            cat IDENTITY.md
+            echo ""
+            cat PERSONALITY.md
+            echo ""
+            cat COMMUNICATION.md
+            echo ""
+            cat INTERACTION.md
+          } > "$ASSETS_DIR/chatting.md"
+
+          # -------------------- agent.md --------------------
+          {
+            cat IDENTITY.md
+            echo ""
+            cat PERSONALITY.md
+            echo ""
+            cat ABILITIES.md
+            echo ""
+            echo "注意：你是一个编程助手，专注于帮助用户写代码。请以专业、友好的态度提供编程帮助。"
+          } > "$ASSETS_DIR/agent.md"
+
+          # -------------------- conversation.md --------------------
+          {
+            cat IDENTITY.md
+            echo ""
+            cat PERSONALITY.md
+            echo ""
+            cat COMMUNICATION.md
+            echo ""
+            cat ABILITIES.md
+            echo ""
+            cat INTERACTION.md
+            echo ""
+            cat ENTRY.md
+          } > "$ASSETS_DIR/conversation.md"
+
+          # 列出生成的文件以供检查
+          ls -la "$ASSETS_DIR"
+
+      - name: Create Release and Upload Assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ runner.temp }}/assets/*
+          name: ${{ env.VERSION }}
+          tag_name: ${{ env.VERSION }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
