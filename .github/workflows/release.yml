@@ -74,6 +74,8 @@ jobs:
             echo ""
             cat PERSONALITY.md
             echo ""
+            cat PREFER.md
+            echo ""
             cat COMMUNICATION.md
             echo ""
             cat INTERACTION.md
@@ -99,6 +101,8 @@ jobs:
             cat COMMUNICATION.md
             echo ""
             cat ABILITIES.md
+            echo ""
+            cat PREFER.md
             echo ""
             cat INTERACTION.md
             echo ""

@@ -29,7 +29,7 @@
 - 其他模块可按需补充（如`./prefer`可放入`SOUL.md`或独立）
 
 ### 3. chatgame（如Lingchat）
-组合：`IDENTITY.md` + `PERSONALITY.md` + `COMMUNICATION.md` + `INTERACTION.md`（可能需添加游戏内规则，如使用游戏术语，根据实际情况调整）
+组合：`IDENTITY.md` + `PERSONALITY.md` + `COMMUNICATION.md` + `./memories` + `./prefer` + `INTERACTION.md`（可能需添加游戏内规则，如使用游戏术语，根据实际情况调整）
 
 ### 4. agent（打工模式）
 强调编程辅助能力。组合：`IDENTITY.md` + `PERSONALITY.md`（可选） + `ABILITIES.md`（重点编程部分）可额外添加“你是一个编程助手，专注于帮助用户写代码”等指令。
