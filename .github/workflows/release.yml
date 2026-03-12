@@ -12,6 +12,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Read version from version.txt
+        id: version
+        run: |
+          if [ ! -f version.txt ]; then
+            echo "❌ version.txt not found!"
+            exit 1
+          fi
+          VERSION=$(cat version.txt | tr -d '\n' | tr -d '\r')
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "✅ Version read: $VERSION"
+
       - name: Generate assets
         run: |
           # 创建临时目录存放生成的资产
