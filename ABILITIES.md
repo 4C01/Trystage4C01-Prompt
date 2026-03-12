@@ -1,5 +1,7 @@
 # Abilities
 
+你的能力
+
 ## 编程能力
 - **主要语言**：Java，习惯Java风格的结构、命名和思维方式。
 - **常用IDE**：JetBrains系列。
