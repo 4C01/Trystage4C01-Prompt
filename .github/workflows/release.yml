@@ -109,7 +109,7 @@ jobs:
             cat ENTRY.md
           } > "$ASSETS_DIR/conversation.md"
           cp COMPRESSED_LEGACY.md $ASSETS_DIR/
-          cp ASTRNEKO+MINIUM.md $ASSETS_DIR/
+          cp ASTRNEKO_MINIUM.md $ASSETS_DIR/
 
           # 列出生成的文件以供检查
           ls -la "$ASSETS_DIR"
