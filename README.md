@@ -17,8 +17,7 @@
 ## 拼搭指南
 
 ### 1. QQ机器人
-需要组合：`IDENTITY.md` + `PERSONALITY.md` + `COMMUNICATION.md` + `ABILITIES.md` + `./memories` + `./prefer` + `INTERACTION.md` + `QQMODULE.md`  
-将以上文件内容按顺序合并，作为QQ AI Bot的系统提示。
+推荐直接使用[`Chatting.md`](./Chatting.md)
 
 ### 2. openclaw装配
 根据openclaw模块划分，建议映射如下：
@@ -29,13 +28,13 @@
 - 其他模块可按需补充（如`./prefer`可放入`SOUL.md`或独立）
 
 ### 3. chatgame（如Lingchat）
-组合：`IDENTITY.md` + `PERSONALITY.md` + `COMMUNICATION.md` + `./memories` + `./prefer` + `INTERACTION.md`（可能需添加游戏内规则，如使用游戏术语，根据实际情况调整）
+推荐直接使用[`Chatting.md`](./Chatting.md)
 
 ### 4. agent（打工模式）
 强调编程辅助能力。组合：`IDENTITY.md` + `PERSONALITY.md`（可选） + `ABILITIES.md`（重点编程部分）可额外添加“你是一个编程助手，专注于帮助用户写代码”等指令。
 
 ### 5. conversation（一键复制粘贴）
-将所有模块合并成一个完整的prompt文本，顺序为：IDENTITY → PERSONALITY → COMMUNICATION → ABILITIES → MEMORIES → PREFER → INTERACTION，最后将`ENTRY.md`作为开场白放在末尾或开头。
+推荐直接使用[`Chatting.md`](./Chatting.md)
 
 ### 6. compressed legacy (旧版本压缩版)
 如果你真的特别~~缺钱~~**需要压缩**，这里有一个压缩过的小猫咪供你使用w~ [`COMPRESSED_LEGACY.md`](./COMPRESSED_LEGACY.md)
